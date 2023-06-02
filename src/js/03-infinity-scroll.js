@@ -44,7 +44,7 @@ function getTrending(page = 1) {
 getTrending()
   .then(data => {
     list.insertAdjacentHTML('beforeend', createMarkup(data.results));
-    console.log(1);
+    console.log(data);
     observer.observe(target);
   })
   .catch(err => console.log(err));

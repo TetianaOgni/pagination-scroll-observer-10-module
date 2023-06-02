@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test api the movies</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/04-test-themovies.css" />
+  </head>
+  <body>
+    <p><a href="index.html">Go back</a></p>
+    <div class="form-wrapper">
+      <form class="search-form movie-search" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit" class="submit">
+          <span class="">Search</span>
+          <svg class="" width="24" height="20">
+            <use href="./img/search.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <p class="movie-day">movie day</p>
+    <p class="movie-week">movie week</p>
+    <p class="movie-upcoming">movie upcoming</p>
+    <p class="movie-search">movie search</p>
+    <p class="movie-description">movie description</p>
+
+    <div class="js-guard"></div>
+    <ul class="list"></ul>
+    <div class="js-guard"></div>
+    <!-- <button class="js-load" hidden>Load more</button> -->
+    <div id="pagination-container"></div>
+
+    <script src="js/04-test-themovies.js" type="module"></script>
+  </body>
+</html>
