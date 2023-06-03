@@ -13,7 +13,7 @@ const refs = {
   movieSearch: document.querySelector('.movie-search'),
   movieDescription: document.querySelector('.movie-description'),
 
-  movieList: document.querySelector('.list'),
+  movieList: document.querySelector('.list-movie-card'),
 };
 refs.movieDay.addEventListener('click', handlerMoviesDay);
 refs.movieWeek.addEventListener('click', handlerMoviesWeek);
@@ -65,15 +65,16 @@ function markupMovies({ results }) {
   refs.movieList.innerHTML = results
     .map(
       ({ poster_path, title, vote_average, genre_ids, release_date }) =>
-        `<li class='movie-card'>
+        `<li class='item-movie-card'>
     <img class='poster-movie-card' src='https://image.tmdb.org/t/p/w200${poster_path}' alt='${title}'>
     <div class='overlay-movie-card'></div>
     <div class='info-movie-card'>
       <h4 class='title-movie-card'>${title}</h4>
       <div class='wrapper-movie-card'>
-        <div class='genre-year-movie-card>
-          <p class='genre-movie-card'>${genre_ids}</p>
-          <p class='year-movie-card'>${release_date.slice(0, 4)}</p>
+        <div class='genre-year-movie-card container'>
+          <p class='genre-movie-card span'>${genre_ids}</p>
+          <span class='divider-movie-card'>|</span> 
+          <p class='year-movie-card span'>${release_date.slice(0, 4)}</p>
         </div>
         <div class='vote-movie-card'>${vote_average}</div>
       </div>
@@ -100,3 +101,24 @@ function markupMovies({ results }) {
 //     .join('');
 // }
 // -----
+
+// ---
+// refs.movieList.innerHTML = results
+//   .map(
+//     ({ poster_path, title, vote_average, genre_ids, release_date }) =>
+//       `<li class='movie-card'>
+//   <img class='poster-movie-card' src='https://image.tmdb.org/t/p/w200${poster_path}' alt='${title}'>
+//   <div class='overlay-movie-card'></div>
+//   <div class='info-movie-card'>
+//     <h4 class='title-movie-card'>${title}</h4>
+//     <div class='wrapper-movie-card'>
+//       <div class='genre-year-movie-card>
+//         <p class='genre-movie-card'>${genre_ids}</p>
+//         <p class='year-movie-card'>${release_date.slice(0, 4)}</p>
+//       </div>
+//       <div class='vote-movie-card'>${vote_average}</div>
+//     </div>
+//   </div>
+// </li>`
+//   )
+//   .join('');
