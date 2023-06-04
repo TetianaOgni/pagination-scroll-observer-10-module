@@ -1,0 +1,2 @@
+const e=document.querySelector(".js-list");(function(e=1){return fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=345007f9ab440e5b86cef51be6397df1&page=${e}`).then((e=>{if(!e.ok)throw new Error(e.statusText);return e.json()}))})().then((t=>{e.insertAdjacentHTML("beforeend",t.results.map((({poster_path:e,title:t})=>`<li>\n    <img src='https://image.tmdb.org/t/p/w200${e}' alt='${t}'>\n    <h2>${t}</hi>\n  </li>`)).join("")),t.page!==t.total_pagees&&(loadMore.hidden=!1)})).catch((e=>console.log(e)));
+//# sourceMappingURL=02-pagination.2368f984.js.map
